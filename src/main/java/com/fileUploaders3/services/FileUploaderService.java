@@ -37,7 +37,8 @@ public class FileUploaderService {
     @PostConstruct
     public void init() {
         s3Client = AmazonS3ClientBuilder.standard()
-                .withCredentials(new ProfileCredentialsProvider("default"))
+                //.withCredentials(new ProfileCredentialsProvider("default"))
+                .withCredentials(new EnvironmentVariableCredentialsProvider())
                 .withRegion(Regions.EU_WEST_1)
                 .build();
         LOGGER.info("Amazon S3 client was initialized");
