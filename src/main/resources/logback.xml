@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration debug="false">
+    <!-- Appenders -->
+    <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+        <param name="Target" value="System.out"/>
+        <encoder>
+            <pattern>%5p [%C.%M]: %L - %m%n</pattern>
+        </encoder>
+    </appender>
+
+
+    <!-- Root Logger -->
+    <root level="info">
+        <appender-ref ref="console"/>
+    </root>
+
+    <logger name="service" level="info" additivity="false">
+        <appender-ref ref="console"/>
+    </logger>
+
+    <logger name="web" level="INFO" additivity="false">
+        <appender-ref ref="console"/>
+    </logger>
+
+    <logger name="org.springframework.beans" additivity="false">
+        <level value="info"/>
+        <appender-ref ref="console"/>
+    </logger>
+
+    <logger name="org.springframework.context" additivity="false">
+        <level value="info"/>
+        <appender-ref ref="console"/>
+    </logger>
+
+    <logger name="org.springframework.web" additivity="false">
+        <level value="info"/>
+        <appender-ref ref="console"/>
+    </logger>
+
+    <logger name="org.springframework.web.servlet" additivity="false">
+        <level value="info"/>
+        <appender-ref ref="console"/>
+    </logger>
+
+</configuration>
